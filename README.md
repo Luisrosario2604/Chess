@@ -1,6 +1,6 @@
 # ♟️ Chess Project ♟️
 
-Chess software to play versus artificial intelligences
+Chess software & artificial intelligence
 
 ## Getting Started
 

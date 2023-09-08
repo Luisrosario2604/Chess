@@ -204,5 +204,5 @@ Pion | P | Pawn | P |♙ ♟
 
 ## Authors
 
-* **Luis Rosario** - *Initial work* - [Luisrosario](https://github.com/Luisrosario2604)
+* **Luis Rosario** - *Member 1* - [Luisrosario](https://github.com/Luisrosario2604)
 

@@ -26,24 +26,24 @@ $ sudo dnf install python-tk
     ├── sprites              # Sprites need by the graphical part
     ├── src                  # Source files (of the graphic and playing part)
     ├── images               # Images for the readme
-    ├ play.txt               # File created every time you play (history of mooves)
+    ├ play.txt               # File created every time you play (history of moves)
     └ README.md
 
-> Use short lowercase names at least for the top-level files and folders except
-> `README.md`
+> Use short lowercase names at least for the top-level files and folders (except
+> `README.md`)
 
 ## Software
 
 ### Start the project
 
-To start the project is pretty easy ! The only thing you have to do is to run the main (and you A.I if needed)
+Start the project : The only thing you have to do is to run the main file (and your A.I if needed)
 
 ```
 $ cd src/
 $ ./main.py
 ```
 
-If you want to start an A.I just run it ! (run twice if you want A.I vs A.I)
+If you want to start an A.I just run it ! (run twice if you want to do A.I vs A.I)
 
 ```
 $ cd ia/
@@ -74,7 +74,7 @@ The software looks like this (French version) :
 
 1) Add a human player
 2) Change skin
-3) Debug (print mooves and board in game)
+3) Debug (print moves and board in game)
 4) Quit
 
 ![Menu2](./images/menu2.png)
@@ -99,11 +99,11 @@ Squares are here to indicate the status of each player
 
 #### How it works
 
-This software comunicates with the A.I by file.
+This software comunicates with the A.I by txt file.
 
-Every single game you will have a plays.txt file created.
-This file will have all the mooves history of the game.
-So if you want to make your A.I you will have to play your moove in this file
+Every game it will create a plays.txt file.
+This file will have all the moves of the game.
+So if you want to "connect" your A.I with the software you will have to play your moves in this file.
 
 Exemple of the content :
 
@@ -123,30 +123,30 @@ START
 [END] BLACK
 ```
 
-You always have a key word that explain the line :
+Every line is explained by a keyword :
 
 * START -> Printed by the A.I to say that it's connected
 * [NEW] PLAYER -> Response by the software after "START"
     * PLAYER = Witch side you are
-* [TURN] PLAYER MOOVE -> Sofware saying that's the turn of someone
+* [TURN] PLAYER MOVE -> Sofware saying that's the turn of someone
     * PLAYER = player to play (== "WHITE" or "BLACK")
-    * MOOVE = last moove played by opponent (== "B4B2")
-* [PLAY] PLAYER MOOVE -> A.I response after a "[TURN]" to indicated the mooves that he choose
+    * MOVE = last move played by opponent (== "B4B2")
+* [PLAY] PLAYER MOVE -> A.I response after a "[TURN]" to indicated the moves that he choose
     * PLAYER = player witch as play (== "WHITE" or "BLACK")
-    * MOOVE = moove that you want to do (== "B4B2")
+    * MOVE = move that you want to do (== "B4B2")
 * [END] PLAYER -> end of the game
     * PLAYER = player who wins (or message if null)
 
 
 #### Template
 
-If you want to code your ia and integrated to my program, you can find a template in the "ia" folder.
-Or code your own stating with an empty file !
+If you want to code your ia and integrated it to my program, you can find a template in the "ia" folder.
+Or code your own starting with an empty file !
 
 If you want to use the template :
 
 1) The function "yourTurn()" is called when you have to play
-2) You will just need to call "writeFile()" function with the moove that you want to do.
+2) You will just need to call "writeFile()" function with the move that you want to do.
 
 ```
 def yourTurn(player, read):
@@ -154,25 +154,25 @@ def yourTurn(player, read):
     writeFile("[PLAY] " + player + " B1C3")
 ```
 
-The moove to print should be like this : [PLAY] + player + moove
+The move to print should be like this : [PLAY] + player + move
 
 1) [PLAY] == "[PLAY]"
 2) player == "WHITE" or "BLACK" (your side)
-3) moove = "B1C3" (If you do a promotion add the letter of the piece that you want to back up (the letter should be the french letter))
+3) move = "B1C3" (If you do a promotion add the letter of the piece that you want to back up (the letter should be the french letter))
 
 Exemple : "[PLAY] BLACK B1C3" or  "[PLAY] WHITE C2C1d"
 
-(for letters see letters part)
+(to know each letter meaning check letters part)
 
 #### Board information
 
 If you need information of the board you have 3 methods
 
-1) The "read" parameter of "yourTurn()" function contains the last moove
+1) The "read" parameter of "yourTurn()" function contains the last move
 
 2) You read the boardInformation.txt file that will have the board printed as an array (or call the function getBoardInformation() from the template)
 
-3) You read the totalMovesInformation file that will have the total mooves played printed as an array (or call the function getTotalMovesInformation() from the template)
+3) You read the totalMovesInformation file that will have the total moves played printed as an array (or call the function getTotalMovesInformation() from the template)
 
 
 ```
@@ -190,7 +190,7 @@ totalMovesInformation.txt
 
 #### Letters
 
-The letters used for the backup or in the getBoardInformation() function are these
+Letters used in the txt file and getBoardInformation() function :
 
 French Name | French letter | English Name| English letter | Figurine
 ------------ | ------------- | ------------- | ------------- | -------------

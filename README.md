@@ -11,20 +11,20 @@ These instructions will get you a copy of the project up and running on your loc
 * Python 3.7+
 * Tkinter for Python 3+
 
-```
-$ sudo apt-get install python3-tk
-$ sudo apt-get install python-tk
+```bash
+sudo apt-get install python3-tk
+
 or
-$ sudo dnf install python3-tk
-$ sudo dnf install python-tk
+
+sudo dnf install python3-tkinter
 ```
 
 ### Directory layout
 
     .
-    ├── ia                   # Put all the artificial intelligence there
-    ├── sprites              # Sprites need by the graphical part
-    ├── src                  # Source files (of the graphic and playing part)
+    ├── ia                   # Put all the A.I's here
+    ├── sprites              # Sprites needed by the graphical part
+    ├── src                  # Source files (of the graphical and playing part)
     ├── images               # Images for the readme
     ├ play.txt               # File created every time you play (history of moves)
     └ README.md
@@ -38,16 +38,16 @@ $ sudo dnf install python-tk
 
 Start the project : The only thing you have to do is to run the main file (and your A.I if needed)
 
-```
-$ cd src/
-$ ./main.py
+```bash
+cd src/
+./main.py
 ```
 
-If you want to start an A.I just run it ! (run twice if you want to do A.I vs A.I)
+If you want to start an A.I just run it from an other terminal while ./main.py is running (run twice if you want to do A.I vs A.I)
 
-```
-$ cd ia/
-$ ./very-hard-ai.py
+```bash
+cd ia/
+./very-hard-ai.py
 ```
 
 
